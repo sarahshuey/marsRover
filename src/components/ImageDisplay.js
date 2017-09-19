@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 
-
-class ImageDisplay extends Component {
-  render(){
-    let items = this.props.photos
-    let images= items.map((item)=>{
-      return(
-        <img src={item.img_src} alt="">
+ class ImageDisplay extends Component {
+  render() {
+    let array = this.props.images;
+    let photos = array.map( (photo, index) => {
+      return (
+        <div key={index}>
+          <img src={photo.img_src} alt='img'></img>
+        </div>
       )
-    })
-    return(
+    });
+    return (
       <div>
-      {images}
+        {photos}
       </div>
-    )
+    );
   }
 }
-
 
 export default ImageDisplay
